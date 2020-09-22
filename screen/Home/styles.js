@@ -17,11 +17,14 @@ export const Row = styled.View `
     align-items: center;   
 `;
 export const RowImg = styled.View `
-    flex:1;
+    
+    margin-bottom:10px;
    
 `;
 export const Img = styled.Image `
     width:100%;
+    height:350px;
+
 
 `;
 
@@ -57,4 +60,37 @@ export const Box = styled.View `
 export const Div  = styled.View `
     background:${Colors.darkgrey};
     width:2px;
+`;
+export const RowDesc = styled.View `
+    margin-top:40px;
+    align-items:center;
+
+`;
+export const DescBox = styled.View `
+    flex-direction: row;
+    margin-top:10px;
+`;
+export const DescTitle = styled.Text `
+    color:${Colors.textgray};
+`;
+export const DescText = styled.Text `
+    color:${Colors.white}
+`;
+export const RowButton = styled.View `
+    height:70px;
+    margin-top:20px;
+    align-items:center;
+    justify-content:center;
+`;
+export const Button = styled.TouchableOpacity `
+    border: solid ${Colors.candy};
+    align-items:center;
+    justify-content:center;
+    width:300px;
+    height:54px;
+    border-radius: 100px;
+`;
+export const BntText = styled.Text `
+    color:${Colors.white};
+    font-size: 18px;
 `;
