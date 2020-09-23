@@ -6,6 +6,7 @@ import LogoHome from './components/LogoHome';
 import Home from './screen/Home';
 import Car from './screen/Car';
 import Header from './components/Header';
+import Exterior from './screen/Exterior';
 
 
 const Stack = createStackNavigator();
@@ -33,6 +34,16 @@ export default function App() {
           },
           headerTitle: props => <Header screenId='0' />
         }}
+        />
+        <Stack.Screen 
+          name="exterior"
+          component={Exterior}
+          options={{
+            headerStyle:{
+              height:160,
+            },
+            headerTitle: props => <Header screenId='1' />
+          }}
         />
      </Stack.Navigator>
    </NavigationContainer>

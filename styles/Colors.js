@@ -7,5 +7,6 @@ export default {
     titlegray:'#A4B0BC',
     blue:'#044BB6',
     darkgrey:'#45525C',
+    metalgrey:'#E5E5E5',
 
 }
