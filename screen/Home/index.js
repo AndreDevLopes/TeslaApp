@@ -1,7 +1,7 @@
 import React , {useState} from 'react';
-import {View, Image , SafeAreaView , FlatList ,ScrollView } from 'react-native';
+import {View , SafeAreaView , FlatList ,ScrollView } from 'react-native';
 
- import { Container, Logo, Row,
+ import { Container, Row,
           Title, ItemTitle, RowImg,
           Img,RowInfo,TitleInfo , SubTitleInfo,
           Box, Div, RowDesc , DescBox , DescTitle,
@@ -11,10 +11,9 @@ import Data from '../../data/dataHome';
 
 
 
-const Home = () => {
-
-  const[selectedId , setSelectedId] = useState(null);
-
+const Home = ({navigation}) => {
+  
+  const[selectedId , setSelectedId] = useState(0);
   
   const renderItem = ({item}) =>{ 
     const size = item.id === selectedId ? '40px': '28px';
@@ -33,9 +32,6 @@ const Home = () => {
   <Container>
         <SafeAreaView>
           <ScrollView>
-            <Logo>
-            <Image source={require('../../assets/logo1.png')}/>     
-             </Logo>
             <Row>
               <Title>Tesla</Title>
               <SafeAreaView>
@@ -55,7 +51,7 @@ const Home = () => {
             <View>
                 <RowInfo>
                     <Box>
-                   <TitleInfo>{Data[selectedId].speed || "300 mi"}</TitleInfo>
+                   <TitleInfo>{Data[selectedId].speed}</TitleInfo>
                     <SubTitleInfo>Range(EPA est.)</SubTitleInfo>
                     </Box>
                     <Div></Div>
@@ -68,7 +64,7 @@ const Home = () => {
                 <RowDesc>
                   <DescBox>
                     <DescTitle>Acceleration:</DescTitle>
-                    <DescText>{Data[selectedId].Acceleration || "0-60 mph in 3.5s"} </DescText>
+                    <DescText>{Data[selectedId].Acceleration} </DescText>
                   </DescBox>
                   <DescBox>
                     <DescTitle>Top Speed:</DescTitle>
@@ -78,7 +74,7 @@ const Home = () => {
               
             </View>
             <RowButton>
-                  <Button>
+                  <Button onPress={()=> navigation.navigate('Car')}>
                     <BntText>ORDEM NOW</BntText>
                 </Button>
             </RowButton>

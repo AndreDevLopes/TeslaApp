@@ -8,13 +8,11 @@ export const Container = styled.View`
     
   
 `;
-export const Logo = styled.View `   
-    align-items:center;
-    padding:50px;
-`;
+
 export const Row = styled.View `
     height: 100px;
-    align-items: center;   
+    align-items: center; 
+    margin-top:20px;  
 `;
 export const RowImg = styled.View `
     
