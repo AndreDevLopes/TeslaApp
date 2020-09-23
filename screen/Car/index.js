@@ -5,7 +5,7 @@ import { View , Text } from 'react-native';
 
 const Car = () => {
   return (<View>
-      <Text>testando</Text>
+      
   </View>);
 }
 

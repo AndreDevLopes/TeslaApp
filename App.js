@@ -1,11 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
+
 import React from 'react';
-import { View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import LogoHome from './components/LogoHome';
 import Home from './screen/Home';
 import Car from './screen/Car';
+import Header from './components/Header';
 
 
 const Stack = createStackNavigator();
@@ -24,7 +24,16 @@ export default function App() {
           headerTitle: props => <LogoHome />
 
           }} />
-       <Stack.Screen name="Car" component={Car} />
+       <Stack.Screen 
+        name="Car" 
+        component={Car}
+        options={{
+          headerStyle:{
+            height:160,
+          },
+          headerTitle: props => <Header screenId='0' />
+        }}
+        />
      </Stack.Navigator>
    </NavigationContainer>
   );
