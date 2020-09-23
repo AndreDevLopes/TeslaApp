@@ -1,23 +1,34 @@
-import React from 'react';
+import React , {useState} from 'react';
 import {View, Image , SafeAreaView , FlatList ,ScrollView } from 'react-native';
 
  import { Container, Logo, Row,
           Title, ItemTitle, RowImg,
           Img,RowInfo,TitleInfo , SubTitleInfo,
           Box, Div, RowDesc , DescBox , DescTitle,
-          DescText , Button , BntText , RowButton} from './styles';
+          DescText , Button , BntText , RowButton , ButtonItem} from './styles';
 
 import Data from '../../data/dataHome';
 
 
 
 const Home = () => {
+
+  const[selectedId , setSelectedId] = useState(null);
+
   
-  const renderItem = ({item}) => (   
-    <View>
-    <ItemTitle>{item.title}</ItemTitle> 
-   </View>
-  );
+  const renderItem = ({item}) =>{ 
+    const size = item.id === selectedId ? '40px': '28px';
+    const color = item.id === selectedId ? '#FFFFFF':'#45525c';
+    return(   
+    <ButtonItem
+      onPress={()=> setSelectedId(item.id)}
+     
+    >
+      <ItemTitle  size ={size} color={color}>{item.title}</ItemTitle> 
+    </ButtonItem>
+   
+     );
+  }
   return (
   <Container>
         <SafeAreaView>
@@ -44,7 +55,7 @@ const Home = () => {
             <View>
                 <RowInfo>
                     <Box>
-                      <TitleInfo>300 mi</TitleInfo>
+                   <TitleInfo>{Data[selectedId].speed || "300 mi"}</TitleInfo>
                     <SubTitleInfo>Range(EPA est.)</SubTitleInfo>
                     </Box>
                     <Div></Div>
@@ -57,7 +68,7 @@ const Home = () => {
                 <RowDesc>
                   <DescBox>
                     <DescTitle>Acceleration:</DescTitle>
-                    <DescText> 0-60 mph in 3.5s</DescText>
+                    <DescText>{Data[selectedId].Acceleration || "0-60 mph in 3.5s"} </DescText>
                   </DescBox>
                   <DescBox>
                     <DescTitle>Top Speed:</DescTitle>

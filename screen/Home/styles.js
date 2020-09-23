@@ -19,6 +19,7 @@ export const Row = styled.View `
 export const RowImg = styled.View `
     
     margin-bottom:10px;
+    margin-top:20px;
    
 `;
 export const Img = styled.Image `
@@ -34,9 +35,8 @@ export const Title = styled.Text `
 `;
 
 export const ItemTitle = styled.Text `
-    font-size:32px;
-    color:${Colors.white};
-    margin-left:20px;
+    color:${props => props.color};
+    font-size:${props => props.size } ;
 `;
 
 export const RowInfo = styled.View `
@@ -93,4 +93,12 @@ export const Button = styled.TouchableOpacity `
 export const BntText = styled.Text `
     color:${Colors.white};
     font-size: 18px;
+`;
+export const ButtonItem  = styled.TouchableOpacity `
+    margin-top:10px;
+    height:50px;
+    width:160px;
+    justify-content:center;
+    align-items:center;
+    
 `;
