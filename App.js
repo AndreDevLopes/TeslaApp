@@ -7,6 +7,7 @@ import Home from './screen/Home';
 import Car from './screen/Car';
 import Header from './components/Header';
 import Exterior from './screen/Exterior';
+import Interior from './screen/Interior';
 
 
 const Stack = createStackNavigator();
@@ -43,6 +44,16 @@ export default function App() {
               height:160,
             },
             headerTitle: props => <Header screenId='1' />
+          }}
+        />
+         <Stack.Screen 
+          name="interior"
+          component={Interior}
+          options={{
+            headerStyle:{
+              height:160,
+            },
+            headerTitle: props => <Header screenId='2' />
           }}
         />
      </Stack.Navigator>

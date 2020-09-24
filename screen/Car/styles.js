@@ -19,6 +19,7 @@ export const Title = styled.Text `
 export const Img = styled.Image `
     width:100%;
     height:245px;
+ 
 
 `;
 
